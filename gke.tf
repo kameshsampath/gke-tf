@@ -49,7 +49,7 @@ resource "google_container_cluster" "primary" {
 # Separately Managed Node Pool
 resource "google_container_node_pool" "primary_nodes" {
   name       = google_container_cluster.primary.name
-  location   = data.google_compute_zones.available.names[1]
+  location   = local.google_zone
   cluster    = google_container_cluster.primary.name
   node_count = var.gke_num_nodes
 
