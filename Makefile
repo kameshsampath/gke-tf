@@ -24,10 +24,10 @@ plan:	format	## Create terraform plan that will be applied
 validate:	format	## Validate the terraform resources
 	terraform validate
 
-create:	validate	## Creates the terraform resources
+apply:	validate	## Creates the terraform resources
 	terraform apply -var-file="$(TFVARS_FILE)"
 
 destroy:	##	Destroys terraform resources
-	terraform destroy
+	terraform destroy -var-file="$(TFVARS_FILE)"
 
 .PHONY:	create	clean	destroy	init	plan	validate
