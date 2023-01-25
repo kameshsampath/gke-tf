@@ -79,6 +79,6 @@ resource "local_file" "kubeconfig" {
   })
   filename             = "${path.module}/.kube/config"
   file_permission      = 0600
-  directory_permission = 0600
+  directory_permission = 0700
 }
 
