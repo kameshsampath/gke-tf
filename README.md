@@ -5,7 +5,10 @@ A GitHub template that could be used to get started with [Google Kubernetes Engi
 ## Pre-requisites
 
 - [Google Cloud Account](https://cloud.google.com)
-  - With a Service Account with roles to create GKE Clusters
+  - With a Service Account with roles
+    - `Kubernetes Engine Admin` - to create GKE cluster
+    - `Service Account User`    - to use other needed service accounts
+    - `Compute Network Admin`   - to create the VPC networks
 - [Google Cloud SDK](https://cloud.google.com/sdk)
 - [terraform](https://terraform.build)
 - [helm](https://helm.sh)(Optional)
