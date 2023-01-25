@@ -12,16 +12,6 @@ variable "cluster_name" {
   default     = "my-demos"
 }
 
-variable "gke_username" {
-  default     = ""
-  description = "gke username"
-}
-
-variable "gke_password" {
-  default     = ""
-  description = "gke password"
-}
-
 variable "gke_num_nodes" {
   default     = 2
   description = "number of gke nodes"
@@ -30,13 +20,14 @@ variable "gke_num_nodes" {
 # gcloud compute machine-types list
 variable "machine_type" {
   description = "the google cloud machine types for each cluster node"
-  default     = "e2-standard-2"
+  # https://cloud.google.com/compute/docs/general-purpose-machines#e2_machine_types
+  default = "e2-standard-4"
 }
 
 variable "kubernetes_version" {
   description = "the kubernetes versions of the GKE clusters"
   # kubernetes version to use, major.minor
-  default = "1.23."
+  default = "1.24."
 }
 
 variable "release_channel" {
